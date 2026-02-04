@@ -1,0 +1,11 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Override theme hover styling: underline without boldening.
+a:hover,
+a:focus {
+  font-weight: inherit;
+  text-decoration: underline;
+}
