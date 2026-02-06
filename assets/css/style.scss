@@ -9,3 +9,15 @@ a:focus {
   font-weight: inherit;
   text-decoration: underline;
 }
+
+// Widen main content column and give code blocks a bit more room.
+.wrapper {
+  max-width: 900px;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  section {
+    width: 600px;
+  }
+}
