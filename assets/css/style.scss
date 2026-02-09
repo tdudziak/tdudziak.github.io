@@ -3,6 +3,165 @@
 
 @import "{{ site.theme }}";
 
+// Support dark mode if requested.
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #2f2f2f;
+  --heading: #1f1f1f;
+  --muted: #6a6a6a;
+  --link: #1f6fb2;
+  --link-hover: #0b5f8f;
+  --code: #2a2a2a;
+  --code-bg: #f6f7f9;
+  --border: #e2e4e8;
+  --kbd-bg: #fafbfc;
+  --kbd-border: #c6cbd1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --text: #c9ccd1;
+    --heading: #eef0f2;
+    --muted: #9aa0a8;
+    --link: #8cc4ff;
+    --link-hover: #c1deff;
+    --code: #e7e9ec;
+    --code-bg: #1a1d24;
+    --border: #2a2f3a;
+    --kbd-bg: #1a1d24;
+    --kbd-border: #3a4252;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    background-color: var(--code-bg);
+  }
+
+  .highlight .c,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .c1,
+  .highlight .cs {
+    color: #8b949e;
+    font-style: italic;
+  }
+
+  .highlight .err {
+    color: #ffd7d7;
+    background-color: #5a1e1e;
+  }
+
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt {
+    color: #ffb86c;
+  }
+
+  .highlight .o,
+  .highlight .ow {
+    color: #ff8f97;
+  }
+
+  .highlight .n,
+  .highlight .na,
+  .highlight .nb,
+  .highlight .nc,
+  .highlight .no,
+  .highlight .nd,
+  .highlight .ne,
+  .highlight .nf,
+  .highlight .nl,
+  .highlight .nn,
+  .highlight .nt,
+  .highlight .nv,
+  .highlight .bp {
+    color: #c9d1d9;
+  }
+
+  .highlight .m,
+  .highlight .mb,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo,
+  .highlight .il {
+    color: #f2cc60;
+  }
+
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sx,
+  .highlight .sr,
+  .highlight .s1,
+  .highlight .ss {
+    color: #a5d6ff;
+  }
+
+  .highlight .gh,
+  .highlight .gu,
+  .highlight .gp,
+  .highlight .gs,
+  .highlight .gi,
+  .highlight .gd,
+  .highlight .gr,
+  .highlight .gt {
+    color: #cbd5e1;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6,
+strong {
+  color: var(--heading);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+code, pre {
+  color: var(--code);
+}
+
+pre,
+.highlight {
+  background-color: var(--code-bg);
+}
+
+kbd {
+  background-color: var(--kbd-bg);
+  border-color: var(--kbd-border);
+}
+
+hr,
+table,
+th,
+td {
+  border-color: var(--border);
+}
+
 // Override theme hover styling: underline without boldening.
 a:hover,
 a:focus {
